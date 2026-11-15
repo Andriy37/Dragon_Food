@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon Food — Швидка доставка їжі у твоєму місті</title>
+  <meta name="description" content="Замовляй гарячі бургери, піцу, суші та десерти з найкращих закладів міста. Доставка Dragon Food за 30 хвилин.">
+  <meta property="og:title" content="Dragon Food — Доставка їжі">
+  <meta property="og:description" content="Улюблені ресторани та швидка доставка до дверей.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Перейти до основного вмісту</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Dragon Food — На головну">
+        <img src="../assets/logo.svg" alt="Логотип Dragon Food" width="160" height="36">
+      </a>
+
+      <nav class="nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a href="index.html" aria-current="page">Головна</a></li>
+          <li><a href="restaurants.html">Заклади</a></li>
+          <li><a href="restaurant.html">Меню ресторану</a></li>
+          <li><a href="checkout.html">Оформити замовлення</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button type="button" id="theme-toggle" class="btn btn--pill btn--ghost" aria-label="Перемкнути тему">
+          Тема
+        </button>
+        <a href="checkout.html" class="btn btn--pill btn--primary">
+          Кошик (<span id="cart-count">0</span>)
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="badge">Доставка за 25–35 хв</span>
+          <h1 id="hero-title">Гаряча їжа з улюблених закладів просто до твоїх дверей</h1>
+          <p>Обирай серед найкращих ресторанів міста: соковиті бургери, неаполітанська піца, свіжі роли та авторські десерти без зайвих кліків.</p>
+          <div class="hero__cta">
+            <a href="restaurants.html" class="btn btn--pill btn--primary">Обрати заклад</a>
+            <a href="#popular-restaurants" class="btn btn--pill btn--secondary">Популярне сьогодні</a>
+          </div>
+        </div>
+
+        <figure class="hero__media">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" media="(min-width: 768px)">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=480&q=80" alt="Соковитий фірмовий бургер із картоплею фрі від Dragon Food" width="600" height="400">
+          </picture>
+          <figcaption>Фірмовий сет «Дракон Бургер» — хіт замовлень цього тижня</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <h2 id="categories-title">Популярні категорії</h2>
+        <ul class="category-pills">
+          <li><a href="restaurants.html?category=burgers" class="pill">Бургери</a></li>
+          <li><a href="restaurants.html?category=pizza" class="pill">Піца</a></li>
+          <li><a href="restaurants.html?category=sushi" class="pill">Суші та роли</a></li>
+          <li><a href="restaurants.html?category=asian" class="pill">Азійська кухня</a></li>
+          <li><a href="restaurants.html?category=desserts" class="pill">Десерти та напої</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="popular-restaurants" class="restaurants-preview" aria-labelledby="popular-title">
+      <div class="container">
+        <h2 id="popular-title">Топ заклади поруч</h2>
+        <div class="cards-grid">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Інтер'єр та бургери закладу Dragon Burger" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h3><a href="restaurant.html?id=1">Dragon Burger</a></h3>
+              <p>Крафтові смеш-бургери на бріоші та хрустка картопля.</p>
+              <p class="card__meta">Рейтинг: 4.9 • Доставка: <time datetime="PT30M">25–35 хв</time> • Безкоштовно</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Свіжоспечена піца з печі у закладі Napoli Fire" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h3><a href="restaurant.html?id=2">Napoli Fire Pizza</a></h3>
+              <p>Справжня піца на дровах із моцарелою фіор ді латте.</p>
+              <p class="card__meta">Рейтинг: 4.8 • Доставка: <time datetime="PT35M">30–40 хв</time> • 40 грн</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80" alt="Сет ролів Філадельфія у закладі Sakura Roll" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h3><a href="restaurant.html?id=3">Sakura Roll</a></h3>
+              <p>Авторські роли зі свіжим лососем, вугром та креветками.</p>
+              <p class="card__meta">Рейтинг: 4.9 • Доставка: <time datetime="PT40M">35–45 хв</time> • Безкоштовно</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery-zone" aria-labelledby="zone-title">
+      <div class="container">
+        <h2 id="zone-title">Зона покриття доставки</h2>
+        <p>Доставляємо у всі райони міста щодня з 09:00 до 23:00.</p>
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=24.6800%2C48.9050%2C24.7450%2C48.9380&amp;layer=mapnik"
+          title="Карта зони доставки Dragon Food"
+          width="100%"
+          height="320"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>&copy; <time datetime="2026">2026</time> Dragon Food. Усі права захищено.</p>
+      <p>Гаряча лінія: <a href="tel:+380991234567">+38 (099) 123-45-67</a></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оформлення замовлення — Dragon Food</title>
+  <meta name="description" content="Вкажіть адресу доставки, номер квартири та наявність домофону для швидкого отримання замовлення.">
+  <meta property="og:title" content="Оформлення замовлення — Dragon Food">
+  <meta property="og:description" content="Швидке оформлення доставки їжі до дверей.">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="../assets/logo.svg" alt="Логотип Dragon Food" width="160" height="36">
+      </a>
+      <nav class="nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="restaurants.html">Заклади</a></li>
+          <li><a href="restaurant.html">Меню ресторану</a></li>
+          <li><a href="checkout.html" aria-current="page">Оформити замовлення</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section class="checkout-section" aria-labelledby="checkout-title">
+      <h1 id="checkout-title">Оформлення замовлення</h1>
+
+      <form action="#" method="post" class="checkout-form" id="order-form">
+        <fieldset>
+          <legend>Контактні дані отримувача</legend>
+
+          <div class="form-group">
+            <label for="customer-name">Ваше ім'я *</label>
+            <input type="text" id="customer-name" name="customerName" required minlength="2" placeholder="Наприклад, Андрій">
+          </div>
+
+          <div class="form-group">
+            <label for="customer-phone">Номер телефону *</label>
+            <input type="tel" id="customer-phone" name="phone" required pattern="^\+380\d{9}$" placeholder="+380991234567">
+          </div>
+
+          <div class="form-group">
+            <label for="customer-email">Email для чеку</label>
+            <input type="email" id="customer-email" name="email" placeholder="andriy@example.com">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Адреса доставки</legend>
+
+          <div class="form-group">
+            <label for="street">Вулиця *</label>
+            <input type="text" id="street" name="street" required minlength="3" placeholder="Вулиця Незалежності">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="house">Будинок *</label>
+              <input type="text" id="house" name="house" required placeholder="15А">
+            </div>
+
+            <div class="form-group">
+              <label for="entrance">Під'їзд</label>
+              <input type="text" id="entrance" name="entrance" placeholder="2">
+            </div>
+
+            <div class="form-group">
+              <label for="apartment">Номер квартири *</label>
+              <input type="text" id="apartment" name="apartment" required placeholder="42">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <span id="intercom-label">Чи працює домофон? *</span>
+            <div class="intercom-toggle" role="radiogroup" aria-labelledby="intercom-label">
+              <label>
+                <input type="radio" name="hasIntercom" value="yes" checked> Так
+              </label>
+              <label>
+                <input type="radio" name="hasIntercom" value="no"> Ні
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="payment-method">Спосіб оплати *</label>
+            <select id="payment-method" name="paymentMethod" required>
+              <option value="card">Карткою онлайн (Apple Pay / Google Pay)</option>
+              <option value="cash">Готівкою кур'єру</option>
+              <option value="terminal">Терміналом при отриманні</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comment">Коментар кур'єру</label>
+            <textarea id="comment" name="comment" rows="3" placeholder="Наприклад: код домофону 42К, зателефонувати біля під'їзду"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" name="agreeTerms" required checked>
+              Погоджуюсь з умовами доставки та обробкою персональних даних *
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--pill btn--primary">Підтвердити замовлення</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <time datetime="2026">2026</time> Dragon Food</p>
+    </div>
+  </footer>
+</body>
+</html>
+
