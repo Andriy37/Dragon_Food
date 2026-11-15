@@ -1,0 +1,659 @@
+/* =========================================================
+   1. DESIGN TOKENS (Light & Dark Theme — Dragon Food)
+   ========================================================= */
+:root {
+  --color-primary: #10b981;
+  --color-primary-hover: #059669;
+  --color-primary-soft: rgba(16, 185, 129, 0.12);
+  --color-accent: #f97316;
+
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1f5f9;
+  --color-border: #e2e8f0;
+
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 8px 20px rgba(16, 185, 129, 0.32);
+
+  --radius-sm: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: #0b0f19;
+    --color-surface: #151c2c;
+    --color-surface-alt: #1e293b;
+    --color-border: #293548;
+    --color-text: #f8fafc;
+    --color-text-muted: #94a3b8;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+[data-theme="dark"] {
+  --color-bg: #0b0f19;
+  --color-surface: #151c2c;
+  --color-surface-alt: #1e293b;
+  --color-border: #293548;
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   2. RESET & BASE TYPOGRAPHY (Mobile-First 360px+)
+   ========================================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  line-height: 1.55;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color var(--transition), color var(--transition);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.skip-link, .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  width: auto;
+  height: auto;
+  clip: auto;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  z-index: 999;
+}
+
+/* =========================================================
+   3. BUTTONS & PILLS (Bolt Food / Glovo Style)
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.btn--pill {
+  border-radius: var(--radius-pill);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.22);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn--primary:active {
+  transform: scale(0.97);
+}
+
+.btn--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  padding: 10px 16px;
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================================
+   4. HEADER & NAVIGATION (Flexbox)
+   ========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-height: 70px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nav__list a {
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+}
+
+.nav__list a:hover, .nav__list a[aria-current="page"] {
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================================
+   5. HERO & CATEGORY PILLS
+   ========================================================= */
+.hero {
+  padding: 32px 0;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 14px;
+}
+
+.hero__content p {
+  color: var(--color-text-muted);
+  margin: 16px 0 24px;
+  font-size: 1.05rem;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero__media img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  object-fit: cover;
+}
+
+.hero__media figcaption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.categories {
+  padding: 16px 0 32px;
+}
+
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.92rem;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.pill:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   6. CARDS GRID & DISHES (CSS Grid)
+   ========================================================= */
+.restaurants-preview, .catalog-section, .delivery-zone, .checkout-section {
+  padding: 24px 0 40px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 24px;
+}
+
+.card, .dish-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.card:hover, .dish-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.card img, .dish-card img {
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+}
+
+.card__body, .dish-card__content {
+  padding: 18px;
+}
+
+.card__body p, .dish-card__content p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-top: 6px;
+}
+
+.card__meta {
+  margin-top: 12px !important;
+  font-weight: 600;
+  color: var(--color-text) !important;
+  font-size: 0.85rem !important;
+}
+
+.filters-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* =========================================================
+   7. RESTAURANT MENU & CART SIDEBAR
+   ========================================================= */
+.restaurant-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+.restaurant-banner {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.dishes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.dish-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.counter-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-surface-alt);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.counter-controls button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.counter-controls button:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.cart-sidebar {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  align-self: start;
+}
+
+.cart-items li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart-total {
+  margin: 18px 0;
+  font-size: 1.15rem;
+}
+
+/* =========================================================
+   8. CHECKOUT FORM & INTERCOM TOGGLE (Bolt Food Style)
+   ========================================================= */
+.checkout-form {
+  max-width: 640px;
+  margin: 0 auto;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.checkout-form fieldset {
+  border: none;
+  margin-bottom: 24px;
+}
+
+.checkout-form legend {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.form-group label, #intercom-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-surface);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* Перемикач домофону Так / Ні */
+.intercom-toggle {
+  display: inline-flex;
+  background-color: var(--color-surface-alt);
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  gap: 4px;
+}
+
+.intercom-toggle label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.intercom-toggle label:has(input:checked) {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+.intercom-toggle input[type="radio"] {
+  accent-color: #ffffff;
+}
+
+.delivery-zone iframe {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-top: 16px;
+}
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+.footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 24px 0;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+/* =========================================================
+   10. MEDIA QUERIES (Tablet 768px & Desktop 1280px)
+   ========================================================= */
+@media (min-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+  }
+
+  .filters-bar {
+    flex-direction: row;
+  }
+
+  .filters-bar input[type="search"] {
+    flex: 2;
+  }
+
+  .filters-bar select {
+    flex: 1;
+  }
+
+  .form-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1280px) {
+  .restaurant-layout {
+    grid-template-columns: 1fr 340px;
+  }
+
+  .cart-sidebar {
+    position: sticky;
+    top: 94px;
+  }
+}
