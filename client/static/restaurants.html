@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог закладів — Dragon Food</title>
+  <meta name="description" content="Усі ресторани та кафе з доставкою у сервісі Dragon Food. Пошук за кухнею, рейтингом та часом доставки.">
+  <meta property="og:title" content="Каталог закладів — Dragon Food">
+  <meta property="og:description" content="Обирай заклад за смаком та замовляй доставку за 30 хвилин.">
+  <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="../assets/logo.svg" alt="Логотип Dragon Food" width="160" height="36">
+      </a>
+      <nav class="nav" aria-label="Головна навігація">
+        <ul class="nav__list">
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="restaurants.html" aria-current="page">Заклади</a></li>
+          <li><a href="restaurant.html">Меню ресторану</a></li>
+          <li><a href="checkout.html">Оформити замовлення</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="catalog-section" aria-labelledby="catalog-title">
+      <div class="container">
+        <h1 id="catalog-title">Усі заклади доставки</h1>
+
+        <div class="filters-bar">
+          <label for="search-input" class="visually-hidden">Пошук закладу</label>
+          <input type="search" id="search-input" placeholder="Пошук ресторану або страви...">
+
+          <label for="sort-select" class="visually-hidden">Сортування</label>
+          <select id="sort-select">
+            <option value="rating">За рейтингом</option>
+            <option value="time">За швидкістю доставки</option>
+            <option value="fee">Безкоштовна доставка</option>
+          </select>
+        </div>
+
+        <div class="cards-grid" id="restaurants-list">
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" alt="Dragon Burger" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h2><a href="restaurant.html?id=1">Dragon Burger</a></h2>
+              <p>Бургери • Картопля фрі • Соуси</p>
+              <p class="card__meta">4.9 ★ • 25–35 хв • Доставка 0 грн</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Napoli Fire Pizza" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h2><a href="restaurant.html?id=2">Napoli Fire Pizza</a></h2>
+              <p>Піца на дровах • Італійська кухня</p>
+              <p class="card__meta">4.8 ★ • 30–40 хв • Доставка 40 грн</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80" alt="Sakura Roll" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h2><a href="restaurant.html?id=3">Sakura Roll</a></h2>
+              <p>Суші • Сети • Поке-боули</p>
+              <p class="card__meta">4.9 ★ • 35–45 хв • Доставка 0 грн</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80" alt="Wok & Ramen Lab" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h2><a href="restaurant.html?id=4">Wok &amp; Ramen Lab</a></h2>
+              <p>Азійська кухня • Локшина Wok • Рамен</p>
+              <p class="card__meta">4.7 ★ • 25–35 хв • Доставка 35 грн</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80" alt="Sweet Cloud Bakery" width="400" height="240" loading="lazy">
+            <div class="card__body">
+              <h2><a href="restaurant.html?id=5">Sweet Cloud Bakery</a></h2>
+              <p>Десерти • Чізкейки • Авторська кава</p>
+              <p class="card__meta">4.9 ★ • 20–30 хв • Доставка 30 грн</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <time datetime="2026">2026</time> Dragon Food</p>
+    </div>
+  </footer>
+</body>
+</html>
