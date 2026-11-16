@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dragon-food.vercel.app/sitemap.xml
