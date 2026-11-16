@@ -1,0 +1,172 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Dragon Burger",
+      "category": "burgers",
+      "categoryLabel": "Бургери • Картопля фрі • Соуси",
+      "rating": 4.9,
+      "deliveryTime": 30,
+      "deliveryTimeLabel": "25–35 хв",
+      "deliveryFee": 0,
+      "minOrder": 150,
+      "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80",
+      "description": "Крафтові смеш-бургери на бріоші з мармурової яловичини та фірмовими соусами."
+    },
+    {
+      "id": 2,
+      "name": "Napoli Fire Pizza",
+      "category": "pizza",
+      "categoryLabel": "Піца на дровах • Італійська кухня",
+      "rating": 4.8,
+      "deliveryTime": 35,
+      "deliveryTimeLabel": "30–40 хв",
+      "deliveryFee": 40,
+      "minOrder": 200,
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80",
+      "description": "Справжня неаполітанська піца з печі на дровах із моцарелою фіор ді латте."
+    },
+    {
+      "id": 3,
+      "name": "Sakura Roll",
+      "category": "sushi",
+      "categoryLabel": "Суші • Сети • Поке-боули",
+      "rating": 4.9,
+      "deliveryTime": 40,
+      "deliveryTimeLabel": "35–45 хв",
+      "deliveryFee": 0,
+      "minOrder": 250,
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80",
+      "description": "Авторські роли зі свіжим норвезьким лососем, вугром та тигровими креветками."
+    },
+    {
+      "id": 4,
+      "name": "Wok & Ramen Lab",
+      "category": "asian",
+      "categoryLabel": "Азійська кухня • Локшина Wok • Рамен",
+      "rating": 4.7,
+      "deliveryTime": 30,
+      "deliveryTimeLabel": "25–35 хв",
+      "deliveryFee": 35,
+      "minOrder": 180,
+      "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80",
+      "description": "Насичений рамен, локшина удон на воку та гострі азійські закуски."
+    },
+    {
+      "id": 5,
+      "name": "Sweet Cloud Bakery",
+      "category": "desserts",
+      "categoryLabel": "Десерти • Чізкейки • Авторська кава",
+      "rating": 4.9,
+      "deliveryTime": 25,
+      "deliveryTimeLabel": "20–30 хв",
+      "deliveryFee": 30,
+      "minOrder": 120,
+      "image": "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=600&q=80",
+      "description": "Ніжні баскські чізкейки, круасани з фісташковим кремом та спешелті кава."
+    }
+  ],
+  "dishes": [
+    {
+      "id": 101,
+      "restaurantId": 1,
+      "name": "Дабл Смеш Дракон",
+      "description": "Подвійна мармурова яловичина, сир чеддер, карамелізована цибуля, фірмовий соус димний барбекю.",
+      "weight": "340 г",
+      "price": 245,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 102,
+      "restaurantId": 1,
+      "name": "Трюфельний Чізбургер",
+      "description": "Яловича котлета, трюфельний айолі, сир брі, рукола та булочка бріош.",
+      "weight": "310 г",
+      "price": 260,
+      "image": "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 103,
+      "restaurantId": 1,
+      "name": "Фрі з пармезаном та зеленню",
+      "description": "Хрустка картопля фрі з тертим пармезаном та часниковим соусом.",
+      "weight": "180 г",
+      "price": 95,
+      "image": "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 201,
+      "restaurantId": 2,
+      "name": "Піца Маргарита Неаполітана",
+      "description": "Томати Сан-Марцано, моцарела фіор ді латте, свіжий базилік, оливкова олія Extra Virgin.",
+      "weight": "420 г",
+      "price": 215,
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 202,
+      "restaurantId": 2,
+      "name": "Пепероні Діавола",
+      "description": "Пікантна салямі пепероні, подвійна моцарела, томатний соус, перець чилі та мед.",
+      "weight": "450 г",
+      "price": 275,
+      "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80"
+
+    },
+    {
+      "id": 301,
+      "restaurantId": 3,
+      "name": "Філадельфія Класік з лососем",
+      "description": "Охолоджений норвезький лосось, ніжний крем-сир, свіжий огірок та авокадо.",
+      "weight": "290 г",
+      "price": 285,
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 302,
+      "restaurantId": 3,
+      "name": "Золотий Дракон з вугром",
+      "description": "Копчений вугор у соусі унагі, тигрова креветка темпура, авокадо та кунжут.",
+      "weight": "310 г",
+      "price": 320,
+      "image": "https://images.unsplash.com/photo-1617196034183-421b4917c92d?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 401,
+      "restaurantId": 4,
+      "name": "Тонкоцу Рамен зі свининою",
+      "description": "Насичений бульйон, локшина власного виробництва, мариноване яйце, свинина чашу та норі.",
+      "weight": "480 г",
+      "price": 235,
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 402,
+      "restaurantId": 4,
+      "name": "Удон з куркою та овочами теріякі",
+      "description": "Пшенична локшина удон, обсмажена на воку з курячим філе, перцем, броколі та соусом теріякі.",
+      "weight": "350 г",
+      "price": 195,
+      "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 501,
+      "restaurantId": 5,
+      "name": "Баскський чізкейк Сан-Себастьян",
+      "description": "Ніжний карамелізований вершковий чізкейк із гарячим бельгійським шоколадом.",
+      "weight": "190 г",
+      "price": 165,
+      "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 502,
+      "restaurantId": 5,
+      "name": "Фісташковий круасан",
+      "description": "Хрусткий французький круасан на вершковому маслі з натуральним фісташковим кремом.",
+      "weight": "140 г",
+      "price": 135,
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80"
+
+    }
+  ]
+}
