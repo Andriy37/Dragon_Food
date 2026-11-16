@@ -111,6 +111,60 @@
       "weight": "450 г",
       "price": 275,
       "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 301,
+      "restaurantId": 3,
+      "name": "Філадельфія Класік з лососем",
+      "description": "Охолоджений норвезький лосось, ніжний крем-сир, свіжий огірок та авокадо.",
+      "weight": "290 г",
+      "price": 285,
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 302,
+      "restaurantId": 3,
+      "name": "Золотий Дракон з вугром",
+      "description": "Копчений вугор у соусі унагі, тигрова креветка темпура, авокадо та кунжут.",
+      "weight": "310 г",
+      "price": 320,
+      "image": "https://images.unsplash.com/photo-1617196034183-421b4917c92d?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 401,
+      "restaurantId": 4,
+      "name": "Тонкоцу Рамен зі свининою",
+      "description": "Насичений бульйон, локшина власного виробництва, мариноване яйце, свинина чашу та норі.",
+      "weight": "480 г",
+      "price": 235,
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 402,
+      "restaurantId": 4,
+      "name": "Удон з куркою та овочами теріякі",
+      "description": "Пшенична локшина удон, обсмажена на воку з курячим філе, перцем, броколі та соусом теріякі.",
+      "weight": "350 г",
+      "price": 195,
+      "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 501,
+      "restaurantId": 5,
+      "name": "Баскський чізкейк Сан-Себастьян",
+      "description": "Ніжний карамелізований вершковий чізкейк із гарячим бельгійським шоколадом.",
+      "weight": "190 г",
+      "price": 165,
+      "image": "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+      "id": 502,
+      "restaurantId": 5,
+      "name": "Фісташковий круасан",
+      "description": "Хрусткий французький круасан на вершковому маслі з натуральним фісташковим кремом.",
+      "weight": "140 г",
+      "price": 135,
+      "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80"
     }
   ]
 }

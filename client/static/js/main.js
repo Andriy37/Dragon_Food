@@ -22,10 +22,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const data = await fetchCatalogData();
 
-    // --- Рендер каталогу ресторанів + пошук з debounce 300 мс ---
+// --- Рендер каталогу ресторанів + пошук з debounce 300 мс ---
     if (restaurantsContainer) {
       const searchInput = document.getElementById('search-input');
       const sortSelect = document.getElementById('sort-select');
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedCategory = urlParams.get('category');
 
       const renderRestaurants = (list) => {
         if (!list.length) {
@@ -51,9 +53,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         const query = (searchInput?.value || '').trim().toLowerCase();
         const sortBy = sortSelect?.value || 'rating';
 
-        let filtered = data.restaurants.filter(
-          (r) => r.name.toLowerCase().includes(query) || r.categoryLabel.toLowerCase().includes(query)
-        );
+        let filtered = data.restaurants.filter((r) => {
+          const matchesCategory = !selectedCategory || r.category === selectedCategory;
+          const matchesQuery =
+            r.name.toLowerCase().includes(query) || r.categoryLabel.toLowerCase().includes(query);
+          return matchesCategory && matchesQuery;
+        });
 
         if (sortBy === 'rating') filtered.sort((a, b) => b.rating - a.rating);
         if (sortBy === 'time') filtered.sort((a, b) => a.deliveryTime - b.deliveryTime);
@@ -62,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderRestaurants(filtered);
       };
 
-      renderRestaurants(data.restaurants);
+      applyFilters();
       searchInput?.addEventListener('input', debounce(applyFilters, 300));
       sortSelect?.addEventListener('change', applyFilters);
     }
@@ -75,7 +80,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       const dishes = data.dishes.filter((d) => d.restaurantId === restaurant.id);
 
       const titleEl = document.getElementById('restaurant-name');
-      if (titleEl) titleEl.textContent = restaurant.name;
+      if (titleEl) {
+        titleEl.textContent = restaurant.name;
+        const metaEl = titleEl.nextElementSibling;
+        if (metaEl) {
+          metaEl.textContent = `Рейтинг ${restaurant.rating} ★ • Час доставки: ${restaurant.deliveryTimeLabel} • Мінімальне замовлення: ${restaurant.minOrder} грн`;
+        }
+      }
 
       const renderCartSidebar = () => {
         if (!cartItemsContainer || !cartTotalEl) return;

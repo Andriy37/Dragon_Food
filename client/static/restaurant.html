@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dragon Burger — Меню закладу | Dragon Food</title>
-  <meta name="description" content="Меню ресторану Dragon Burger: крафтові смеш-бургери, закуски та напої з доставкою.">
-  <meta property="og:title" content="Dragon Burger — Меню на Dragon Food">
-  <meta property="og:description" content="Обирай улюблені бургери та додавай у кошик.">
+  <title>Меню закладу — Dragon Food</title>
+  <meta name="description" content="Меню ресторану та швидке замовлення страв у сервісі Dragon Food.">
   <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,66 +25,30 @@
           <li><a href="checkout.html">Оформити замовлення</a></li>
         </ul>
       </nav>
+      <div class="header__actions">
+        <button type="button" id="theme-toggle" class="btn btn--pill btn--ghost">Тема</button>
+        <a href="checkout.html" class="btn btn--pill btn--primary">Кошик (<span id="cart-count">0</span>)</a>
+      </div>
     </div>
   </header>
 
   <main id="main-content" class="container restaurant-layout">
     <section class="menu-section" aria-labelledby="restaurant-name">
       <header class="restaurant-banner">
-        <h1 id="restaurant-name">Dragon Burger</h1>
-        <p>Рейтинг 4.9 ★ • Час доставки: 25–35 хв • Мінімальне замовлення: 150 грн</p>
+        <h1 id="restaurant-name">Завантаження закладу...</h1>
+        <p>Оберіть страви нижче</p>
       </header>
 
-      <h2>Популярні позиції меню</h2>
-      <div class="dishes-grid">
-        <article class="dish-card">
-          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Дабл Смеш Дракон Бургер" width="320" height="200" loading="lazy">
-          <div class="dish-card__content">
-            <h3>Дабл Смеш Дракон</h3>
-            <p>Подвійна мармурова яловичина, сир чеддер, карамелізована цибуля, фірмовий соус димний барбекю. Вага: 340 г.</p>
-            <div class="dish-card__footer">
-              <span class="price">245 грн</span>
-              <div class="counter-controls">
-                <button type="button" class="btn btn--pill" aria-label="Зменшити кількість">−</button>
-                <span>1</span>
-                <button type="button" class="btn btn--pill" aria-label="Збільшити кількість">+</button>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=500&q=80" alt="Трюфельний Чізбургер" width="320" height="200" loading="lazy">
-          <div class="dish-card__content">
-            <h3>Трюфельний Чізбургер</h3>
-            <p>Яловича котлета, трюфельний айолі, сир брі, рукола та булочка бріош. Вага: 310 г.</p>
-            <div class="dish-card__footer">
-              <span class="price">260 грн</span>
-              <button type="button" class="btn btn--pill btn--primary">Додати +</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="dish-card">
-          <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=500&q=80" alt="Картопля фрі з пармезаном" width="320" height="200" loading="lazy">
-          <div class="dish-card__content">
-            <h3>Фрі з пармезаном та зеленню</h3>
-            <p>Хрустка картопля фрі з тертим пармезаном та часниковим соусом. Вага: 180 г.</p>
-            <div class="dish-card__footer">
-              <span class="price">95 грн</span>
-              <button type="button" class="btn btn--pill btn--primary">Додати +</button>
-            </div>
-          </div>
-        </article>
-      </div>
+      <h2>Меню закладу</h2>
+      <div class="dishes-grid" id="dishes-list"></div>
     </section>
 
     <aside class="cart-sidebar" aria-labelledby="cart-title">
       <h2 id="cart-title">Ваш кошик</h2>
-      <ul class="cart-items">
-        <li>Дабл Смеш Дракон × 2 — <strong>490 грн</strong></li>
+      <ul class="cart-items" id="cart-items-list">
+        <li>Кошик порожній</li>
       </ul>
-      <p class="cart-total">Разом до сплати: <strong>490 грн</strong></p>
+      <p class="cart-total">Разом до сплати: <strong id="cart-total-sum">0 грн</strong></p>
       <a href="checkout.html" class="btn btn--pill btn--primary">Оформити замовлення</a>
     </aside>
   </main>
@@ -96,7 +58,7 @@
       <p>&copy; <time datetime="2026">2026</time> Dragon Food</p>
     </div>
   </footer>
+
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
-
