@@ -111,7 +111,7 @@
       "weight": "450 г",
       "price": 275,
       "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=500&q=80"
-<<<<<<< HEAD
+
     },
     {
       "id": 301,
@@ -166,8 +166,7 @@
       "weight": "140 г",
       "price": 135,
       "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=80"
-=======
->>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
+
     }
   ]
 }
