@@ -657,6 +657,10 @@ input:focus, select:focus, textarea:focus {
     top: 94px;
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
 .field-error {
   color: var(--color-error);
   font-size: 0.82rem;

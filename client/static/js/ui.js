@@ -96,4 +96,8 @@ export function initModal() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.hidden) close();
   });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
