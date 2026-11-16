@@ -22,19 +22,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const data = await fetchCatalogData();
 
-<<<<<<< HEAD
 // --- Рендер каталогу ресторанів + пошук з debounce 300 мс ---
     if (restaurantsContainer) {
       const searchInput = document.getElementById('search-input');
       const sortSelect = document.getElementById('sort-select');
       const urlParams = new URLSearchParams(window.location.search);
       const selectedCategory = urlParams.get('category');
-=======
-    // --- Рендер каталогу ресторанів + пошук з debounce 300 мс ---
-    if (restaurantsContainer) {
-      const searchInput = document.getElementById('search-input');
-      const sortSelect = document.getElementById('sort-select');
->>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
 
       const renderRestaurants = (list) => {
         if (!list.length) {
@@ -60,18 +53,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         const query = (searchInput?.value || '').trim().toLowerCase();
         const sortBy = sortSelect?.value || 'rating';
 
-<<<<<<< HEAD
         let filtered = data.restaurants.filter((r) => {
           const matchesCategory = !selectedCategory || r.category === selectedCategory;
           const matchesQuery =
             r.name.toLowerCase().includes(query) || r.categoryLabel.toLowerCase().includes(query);
           return matchesCategory && matchesQuery;
         });
-=======
-        let filtered = data.restaurants.filter(
-          (r) => r.name.toLowerCase().includes(query) || r.categoryLabel.toLowerCase().includes(query)
-        );
->>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
+        
 
         if (sortBy === 'rating') filtered.sort((a, b) => b.rating - a.rating);
         if (sortBy === 'time') filtered.sort((a, b) => a.deliveryTime - b.deliveryTime);
@@ -80,11 +68,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderRestaurants(filtered);
       };
 
-<<<<<<< HEAD
       applyFilters();
-=======
-      renderRestaurants(data.restaurants);
->>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
       searchInput?.addEventListener('input', debounce(applyFilters, 300));
       sortSelect?.addEventListener('change', applyFilters);
     }
@@ -97,17 +81,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       const dishes = data.dishes.filter((d) => d.restaurantId === restaurant.id);
 
       const titleEl = document.getElementById('restaurant-name');
-<<<<<<< HEAD
-      if (titleEl) {
-        titleEl.textContent = restaurant.name;
-        const metaEl = titleEl.nextElementSibling;
-        if (metaEl) {
-          metaEl.textContent = `Рейтинг ${restaurant.rating} ★ • Час доставки: ${restaurant.deliveryTimeLabel} • Мінімальне замовлення: ${restaurant.minOrder} грн`;
-        }
-      }
-=======
       if (titleEl) titleEl.textContent = restaurant.name;
->>>>>>> 4afb2b4704810546e2db52825cf65ef7a8bd1a92
 
       const renderCartSidebar = () => {
         if (!cartItemsContainer || !cartTotalEl) return;
